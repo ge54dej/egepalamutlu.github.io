@@ -2,57 +2,248 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ege Palamutlu — Robotics Portfolio</title>
+  <meta name="description" content="Robotics & Automation portfolio of Ege Palamutlu (TUM). Projects, experience, and contact."/>
   <style>
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b0f17;color:#eaf0ff}
-    .wrap{width:min(1000px,92vw);margin:0 auto;padding:56px 0}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(125,211,252,.12);border:1px solid rgba(125,211,252,.25);color:#7dd3fc;font-size:13px}
-    h1{font-size:44px;margin:14px 0 8px;line-height:1.1}
-    p{color:#a7b3c7;max-width:70ch;line-height:1.6}
+    :root{
+      --bg:#0b0f17; --card:#121a2a; --muted:#a7b3c7; --text:#eaf0ff;
+      --border:rgba(255,255,255,.10); --accent:#7dd3fc; --accent2:#a78bfa;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .container{width:min(1100px,92vw);margin:0 auto}
+    .nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,15,23,.70);border-bottom:1px solid var(--border);z-index:10}
+    .navin{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:12px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .links{display:flex;flex-wrap:wrap;gap:14px}
+    .links a{color:var(--muted)}
+    .hero{padding:56px 0 22px}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;
+      background:rgba(125,211,252,.12);border:1px solid rgba(125,211,252,.25);color:var(--accent);font-size:13px}
+    h1{font-size:clamp(34px,4vw,52px);margin:12px 0 10px;line-height:1.08}
+    .sub{color:var(--muted);max-width:75ch;line-height:1.6}
     .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    a.btn{display:inline-flex;gap:10px;align-items:center;padding:11px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:#eaf0ff;text-decoration:none}
-    a.btn:hover{transform:translateY(-1px)}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:28px}
-    .card{grid-column:span 6;background:#121a2a;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px}
-    @media (max-width:860px){.card{grid-column:span 12} h1{font-size:36px}}
-    .k{color:#a7b3c7;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-    .v{line-height:1.5}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;
+      border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text)}
+    .btn.primary{background:linear-gradient(135deg,rgba(125,211,252,.18),rgba(167,139,250,.18));border-color:rgba(125,211,252,.22)}
+    .btn:hover{transform:translateY(-1px);transition:.15s ease}
+    .section{padding:30px 0}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .card{grid-column:span 6;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;
+      box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    @media(max-width:860px){.card{grid-column:span 12}}
+    .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+    .v{line-height:1.55}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    li{margin:6px 0}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:4px 8px;border-radius:999px}
+    .foot{padding:36px 0 60px;color:var(--muted);font-size:13px}
+    .hr{height:1px;background:var(--border);margin:16px 0}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <span class="badge">Robotics • Controls • Perception • Simulation</span>
-    <h1>Ege Palamutlu</h1>
-    <p>
-      I build robotics systems end-to-end (control, perception, planning, simulation).
-      This site will host a small set of strong projects with clear Problem → Solution → How → Proof → Lessons.
-    </p>
-
-    <div class="row">
-      <a class="btn" href="https://github.com/egepalamutlu" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn (add)</a>
-      <a class="btn" href="mailto:you@example.com">Email (edit)</a>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <div class="k">Project 1</div>
-        <div class="v"><b>Title</b> — 1–2 line summary. Add a demo link + repo link.</div>
-      </div>
-      <div class="card">
-        <div class="k">Project 2</div>
-        <div class="v"><b>Title</b> — 1–2 line summary. Add metrics / video.</div>
-      </div>
-      <div class="card">
-        <div class="k">Project 3</div>
-        <div class="v"><b>Title</b> — 1–2 line summary. Add what you learned.</div>
-      </div>
-      <div class="card">
-        <div class="k">About</div>
-        <div class="v">TUM • Robotics / Automation. (Edit this with your exact program + focus.)</div>
+  <div class="nav">
+    <div class="container navin">
+      <div class="brand">Ege Palamutlu</div>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="badge">Automation & Robotics • TUM • Robotics / Control / Embedded</div>
+      <h1>Robotics Portfolio</h1>
+      <p class="sub">
+        I’m a Master’s student in Electrical Engineering and Information Technology at TUM (Automation & Robotics focus).
+        I work on robot systems and automation—robot control, device integration, and embedded/electronics development.
+      </p>
+
+      <div class="row">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" href="mailto:egepalamutlu01@gmail.com">egepalamutlu01@gmail.com</a>
+        <a class="btn" href="tel:+491773946210">+49 177 3946210</a>
+        <a class="btn" href="https://github.com/egepalamutlu" target="_blank" rel="noopener">GitHub</a>
+        <!-- Optional: add LinkedIn -->
+        <!-- <a class="btn" href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a> -->
+      </div>
+
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">Python</span><span class="tag">C / C#</span><span class="tag">MATLAB / Simulink</span>
+        <span class="tag">Robotics</span><span class="tag">Control Systems</span><span class="tag">PCB Design</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 style="margin:0 0 12px">Projects</h2>
+        <p class="sub" style="margin:0 0 14px">
+          Selected projects (I’ll expand each into Problem → Solution → How → Proof → Lessons as you send demos/repos).
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <div class="k">Computer Vision</div>
+            <div class="v">
+              <b>Tour into the Picture — 3D model from a 2D image</b><br/>
+              MATLAB-based computer vision project to reconstruct a 3D scene impression from a single image.
+            </div>
+            <div class="tags">
+              <span class="tag">MATLAB</span><span class="tag">Computer Vision</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="k">Robotics Modeling</div>
+            <div class="v">
+              <b>Robot Modelling & Identification Practical</b><br/>
+              Developed and validated kinematic/dynamic models and analyzed system behavior in simulation.
+            </div>
+            <div class="tags">
+              <span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">System ID</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="k">Software</div>
+            <div class="v">
+              <b>Voice Assistant (Group Project)</b><br/>
+              Built a Python voice assistant as part of a project practical (pipeline + integration work).
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Team Project</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="k">Embedded</div>
+            <div class="v">
+              <b>Arduino Glasses for the Visually Impaired</b><br/>
+              Device that warns of nearby objects; early embedded + sensor integration work.
+            </div>
+            <div class="tags">
+              <span class="tag">Arduino</span><span class="tag">Sensors</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="sub" style="margin-top:14px">
+          Want this section to look “pro”? Send me: (1) your top 3 project GitHub links, (2) any demo video links,
+          and I’ll rewrite each card into a proper robotics portfolio format.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 style="margin:0 0 12px">Experience</h2>
+        <div class="grid">
+          <div class="card">
+            <div class="k">Working Student</div>
+            <div class="v">
+              <b>Knorr-Bremse — Electronic Systems for Motor Control</b><br/>
+              Hardware design, PCB layout, and system integration using MATLAB/Simulink & KiCAD.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="k">Working Student</div>
+            <div class="v">
+              <b>Puls GmbH — Application Engineering</b><br/>
+              Designed and implemented a Node-RED-based system using Pinebox IoT hardware.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="k">Bachelor Thesis</div>
+            <div class="v">
+              <b>TUM (MIRMI) — Making Laboratory Devices Intelligent</b><br/>
+              Automation-compatible lab device integration; used Franka Panda robot with SiLA software.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="k">Internships</div>
+            <div class="v">
+              <b>Linde Engineering</b> (Engineering Dept.) • <b>MET Advanced Technology Systems</b> (Robotics automation + image processing) •
+              <b>TUM Chair Internship</b> (Matlab optimization pipeline work).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 style="margin:0 0 12px">Skills</h2>
+        <div class="grid">
+          <div class="card">
+            <div class="k">Programming</div>
+            <div class="v">
+              Python • C / C# • Java • Arduino
+            </div>
+          </div>
+          <div class="card">
+            <div class="k">Tools</div>
+            <div class="v">
+              MATLAB / Simulink • LTspice • MS Office • KiCAD (hardware/PCB)
+            </div>
+          </div>
+          <div class="card">
+            <div class="k">Focus</div>
+            <div class="v">
+              Robotics • Control Systems • PCB Design • System Integration
+            </div>
+          </div>
+          <div class="card">
+            <div class="k">Languages</div>
+            <div class="v">
+              Turkish (Native) • English (Advanced) • German (Good)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 style="margin:0 0 12px">Contact</h2>
+        <div class="grid">
+          <div class="card">
+            <div class="k">Get in touch</div>
+            <div class="v">
+              Email: <a href="mailto:egepalamutlu01@gmail.com">egepalamutlu01@gmail.com</a><br/>
+              Phone: <a href="tel:+491773946210">+49 177 3946210</a><br/>
+              Location: Munich, Germany
+              <div class="hr"></div>
+              <div class="v" style="color:var(--muted)">
+                If you want, I can add a CV PDF link here after you upload it into this repo.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="k">What I’m looking for</div>
+            <div class="v">
+              Working student / research roles in robotics software, control, and automation—ideally with real robot integration.
+            </div>
+          </div>
+        </div>
+
+        <div class="foot">© <span id="y"></span> Ege Palamutlu • Built on GitHub Pages</div>
+      </div>
+    </section>
+  </main>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

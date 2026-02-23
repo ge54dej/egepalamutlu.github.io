@@ -1,144 +1,103 @@
-<section class="section" id="projects">
-  <div class="container">
-    <h2>Projects</h2>
-    <p class="lead">
-      A robotics programming project focused on building a reliable perception→action pipeline, validated with visual demos.
-      (Additional videos will be added.)
+<section id="projects" style="padding:30px 0;">
+  <div style="width:min(1100px,92vw);margin:0 auto;">
+    <h2 style="margin:0 0 10px;">Projects</h2>
+    <p style="margin:0 0 14px;color:#a7b3c7;max-width:90ch;line-height:1.6;">
+      Featured project shows a complete robotics programming pipeline (GIFs). Additional videos for the second part will be added later.
     </p>
 
-    <div class="grid">
-      <!-- ===================== PROJECT: IMP Lab ===================== -->
-      <div class="card span12">
-        <div class="k">Featured project</div>
-        <div class="title">Perception-to-Action Robotics Pipeline</div>
-        <div class="meta">
-          A complete workflow: sense the scene, localize target(s), execute actions, and validate success.
+    <!-- One complete project -->
+    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:16px;">
+      <div style="color:#a7b3c7;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Featured project</div>
+      <div style="font-size:18px;font-weight:700;margin:0 0 6px;">Perception-to-Action Robotics Pipeline</div>
+      <div style="color:#a7b3c7;font-size:13px;margin-bottom:12px;line-height:1.5;">
+        A complete workflow: sense the scene → localize target(s) → execute actions → validate success.
+      </div>
+
+      <!-- GIF gallery -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
+        <div style="border:1px solid rgba(255,255,255,.10);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.02);">
+          <img src="circle_port.gif" alt="Demo clip 1" style="width:100%;display:block;">
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.10);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.02);">
+          <img src="gear_port.gif" alt="Demo clip 2" style="width:100%;display:block;">
+        </div>
+        <div style="border:1px solid rgba(255,255,255,.10);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.02);">
+          <img src="spaceship_port.gif" alt="Demo clip 3" style="width:100%;display:block;">
+        </div>
+      </div>
+
+      <div style="height:1px;background:rgba(255,255,255,.10);margin:14px 0;"></div>
+
+      <!-- Key points like thesis -->
+      <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:14px;">
+        <div style="grid-column:span 6;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px;">
+          <div style="color:#a7b3c7;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Problem</div>
+          <div style="line-height:1.55;">
+            Build a reliable pipeline that goes from perception to execution without brittle one-off scripts.
+            The hard part is noise, timing, and verifying success.
+          </div>
         </div>
 
-        <!-- Media row: 3 GIFs -->
-        <div class="twoCol">
-          <div class="media"><img src="circle_port.gif" alt="Perception-to-action pipeline demo (clip 1)"></div>
-          <div class="media"><img src="gear_port.gif" alt="Perception-to-action pipeline demo (clip 2)"></div>
-        </div>
-        <div style="margin-top:14px" class="twoCol">
-          <div class="media" style="max-width:720px"><img src="spaceship_port.gif" alt="Perception-to-action pipeline demo (clip 3)"></div>
-          <div>
-            <div class="k">Proof</div>
-            <p class="sub" style="margin:0">
-              The GIFs show the pipeline running end-to-end with repeatable behaviors across different scenarios/iterations.
-            </p>
-
-            <div class="hr"></div>
-
-            <div class="k">Video</div>
-            <div class="media" style="border-style:dashed; display:flex; align-items:center; justify-content:center; min-height:180px;">
-              <div style="color:var(--muted); padding:20px;">Second demo video coming soon</div>
-            </div>
+        <div style="grid-column:span 6;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px;">
+          <div style="color:#a7b3c7;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Solution</div>
+          <div style="line-height:1.55;">
+            Implemented a modular perception → decision → action → validation structure with clear interfaces
+            for repeatability and fast debugging.
           </div>
         </div>
 
-        <div class="hr"></div>
-
-        <!-- Key points: Problem/Solution/How/Proof/Lessons -->
-        <div class="grid" style="gap:14px">
-          <div class="card flat span6">
-            <div class="k">Problem</div>
-            <p class="sub" style="margin:0">
-              Build a robotics system that can reliably go from raw perception to an executed action, without brittle one-off scripts.
-              The challenge is handling noisy observations, timing, and verification.
-            </p>
+        <div style="grid-column:span 6;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px;">
+          <div style="color:#a7b3c7;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">How</div>
+          <ul style="margin:0;padding-left:18px;color:#a7b3c7;line-height:1.6;">
+            <li>Separated perception, state estimation, and control into clean modules.</li>
+            <li>Step-by-step sequencing with success checks and safe fallback behavior.</li>
+            <li>Consistency in coordinate handling + deterministic parameters.</li>
+            <li>Visual validation and quick iteration using short clips/GIFs.</li>
+          </ul>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#a7b3c7;border:1px solid rgba(255,255,255,.10);padding:4px 8px;border-radius:999px;">Robotics software</span>
+            <span style="font-size:12px;color:#a7b3c7;border:1px solid rgba(255,255,255,.10);padding:4px 8px;border-radius:999px;">Integration</span>
+            <span style="font-size:12px;color:#a7b3c7;border:1px solid rgba(255,255,255,.10);padding:4px 8px;border-radius:999px;">Testing</span>
           </div>
+        </div>
 
-          <div class="card flat span6">
-            <div class="k">Solution</div>
-            <p class="sub" style="margin:0">
-              Implemented a modular pipeline with clear stages (perception → decision → action → validation),
-              designed for repeatability and fast debugging.
-            </p>
-          </div>
+        <div style="grid-column:span 6;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px;">
+          <div style="color:#a7b3c7;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Proof + Status</div>
+          <ul style="margin:0;padding-left:18px;color:#a7b3c7;line-height:1.6;">
+            <li>Working GIF clips showing stable pipeline behavior across iterations.</li>
+            <li>Second-part videos will be added later.</li>
+            <li>Third extension was not completed.</li>
+          </ul>
 
-          <div class="card flat span6">
-            <div class="k">How</div>
-            <ul>
-              <li><b>Pipeline architecture:</b> separated perception, state estimation, and control into clean modules.</li>
-              <li><b>Execution logic:</b> step-by-step sequencing with success checks and safe fallback behavior.</li>
-              <li><b>Robustness:</b> re-try logic, deterministic parameters, and consistent coordinate handling.</li>
-              <li><b>Tooling:</b> structured logging and quick visual validation via short clips/GIFs.</li>
-            </ul>
-            <div class="tags">
-              <span class="tag">Robotics software</span>
-              <span class="tag">System integration</span>
-              <span class="tag">Testing mindset</span>
-            </div>
-          </div>
+          <div style="height:1px;background:rgba(255,255,255,.10);margin:12px 0;"></div>
 
-          <div class="card flat span6">
-            <div class="k">Proof</div>
-            <ul>
-              <li>Working demo clips (GIFs) showing stable behavior and progression through the pipeline stages.</li>
-              <li>Second demo video will be added to show a longer sequence with additional checks.</li>
-              <li><b>Status:</b> a third extension of the project was not completed.</li>
-            </ul>
-
-            <div class="hr"></div>
-
-            <div class="k">Lessons learned</div>
-            <p class="sub" style="margin:0">
-              Reliability comes from clean interfaces and verification: if you can’t measure “success”, you can’t make it robust.
-              Small engineering decisions (timing, retries, coordinate conventions) dominate real robot performance.
-            </p>
+          <div style="color:#a7b3c7;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Lessons learned</div>
+          <div style="line-height:1.55;">
+            Robustness comes from verification: if you can’t define “success”, you can’t make it reliable.
+            Timing, retries, and coordinate conventions matter as much as the main algorithm.
           </div>
         </div>
       </div>
 
-      <!-- ===================== SMALL CV PROJECTS (short) ===================== -->
-      <div class="card span12 flat">
-        <div class="k">Other projects (small selection)</div>
+      <!-- Placeholder for future video -->
+      <div style="margin-top:14px;border:1px dashed rgba(255,255,255,.18);border-radius:14px;min-height:160px;display:flex;align-items:center;justify-content:center;color:#a7b3c7;">
+        Second demo video (coming soon)
+      </div>
+    </div>
 
-        <div class="twoCol">
-          <div>
-            <div class="title">Tour Into The Picture (3D from a single image)</div>
-            <p class="sub">MATLAB computer vision project to create a 3D scene impression from a 2D image.</p>
-            <div class="tags">
-              <span class="tag">MATLAB</span>
-              <span class="tag">Computer Vision</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="title">Arduino glasses for the visually impaired</div>
-            <p class="sub">Wearable prototype warning about nearby objects using embedded sensors.</p>
-            <div class="tags">
-              <span class="tag">Arduino</span>
-              <span class="tag">Sensors</span>
-              <span class="tag">Embedded</span>
-            </div>
-          </div>
+    <!-- Small CV projects (short) -->
+    <div style="margin-top:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;">
+      <div style="color:#a7b3c7;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Other projects (small selection)</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+        <div>
+          <b>Tour Into The Picture</b>
+          <div style="color:#a7b3c7;line-height:1.55;">MATLAB computer vision project to create a 3D scene impression from a 2D image.</div>
         </div>
-
-        <div class="hr"></div>
-
-        <div class="twoCol">
-          <div>
-            <div class="title">Robot modelling & identification practical</div>
-            <p class="sub">Modeling and validation work for robotic systems in simulation.</p>
-            <div class="tags">
-              <span class="tag">MATLAB / Simulink</span>
-              <span class="tag">System ID</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="title">Python voice assistant (group project)</div>
-            <p class="sub">Built a simple voice assistant pipeline and integrated it in a team setup.</p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Team project</span>
-            </div>
-          </div>
+        <div>
+          <b>Arduino glasses for the visually impaired</b>
+          <div style="color:#a7b3c7;line-height:1.55;">Wearable prototype warning about nearby objects using embedded sensors.</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>

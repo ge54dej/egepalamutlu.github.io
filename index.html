@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Ege Palamutlu — Robotics Portfolio</title>
-  <meta name="description" content="Robotics portfolio of Ege Palamutlu. Bachelor thesis, projects, experience, skills, and contact."/>
+  <title>Ege Palamutlu’s Portfolio</title>
+  <meta name="description" content="Portfolio of Ege Palamutlu: bachelor thesis, robotics projects, experience, skills, and contact."/>
   <style>
     :root{
       --bg:#070A10;
@@ -38,7 +38,13 @@
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0; gap:12px;
     }
-    .brand{font-weight:800; letter-spacing:.3px}
+    .brand{
+      font-weight:700;
+      color:var(--muted);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:12px;
+    }
     .navlinks{display:flex; flex-wrap:wrap; gap:14px; color:var(--muted)}
     .navlinks a{color:var(--muted)}
     .navlinks a:hover{color:var(--text); text-decoration:none}
@@ -131,7 +137,6 @@
     }
     @media (max-width: 900px){ .twoCol{grid-template-columns: 1fr;} }
 
-    /* Uniform tiles for GIFs (rectangles) */
     .tileRow{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;}
     @media (max-width: 900px){ .tileRow{grid-template-columns: 1fr;} }
     .tile{
@@ -161,7 +166,7 @@
 <body>
   <div class="nav">
     <div class="container navin">
-      <div class="brand">Ege Palamutlu</div>
+      <div class="brand">Portfolio</div>
       <div class="navlinks">
         <a href="#thesis">Thesis</a>
         <a href="#projects">Projects</a>
@@ -175,7 +180,7 @@
   <header class="hero">
     <div class="container">
       <div class="badge">Electrical Engineering • Automation & Robotics • TUM</div>
-      <h1>Robotics Portfolio</h1>
+      <h1>Ege Palamutlu’s Portfolio</h1>
       <p class="sub">
         I’m studying Electrical Engineering at the Technical University of Munich, focusing on Automation & Robotics.
         I build practical robotics systems and validate them with real demos.
@@ -219,9 +224,7 @@
             <li>Focused on reliability: safe execution and repeatable behavior.</li>
             <li>Demonstrated a complete cycle that reduces manual handling during experiments.</li>
           </ul>
-
           <div class="hr"></div>
-
           <div class="k">What this shows</div>
           <p class="sub" style="margin:0">
             System integration mindset: turning separate components (robot + device) into one dependable workflow.
@@ -243,26 +246,24 @@
           <div class="k">Project 1</div>
           <div class="title">DrawBot — Drawing shapes from SVG on a whiteboard</div>
           <p class="sub">
-            Used RoboDK with a UR10e to draw shapes generated from SVG paths (circle, gear, spaceship).
+            Built a drawing pipeline in RoboDK to render SVG shapes on a flat whiteboard surface with a UR10e.
           </p>
 
-          <!-- same structure as Project 2: left media, right text -->
           <div class="twoCol" style="margin-top:12px">
             <div class="media"><img src="spaceship_port.gif" alt="DrawBot — spaceship"></div>
             <div>
               <div class="k">Key points</div>
               <ul>
-                <li>Converted SVG drawings into robot trajectories.</li>
-                <li>Validated multiple drawings through repeated runs.</li>
-                <li>Delivered a documented, runnable project setup.</li>
+                <li>Converted SVG paths into smooth robot motion segments (pen up/down + drawing strokes).</li>
+                <li>Scaled and positioned shapes consistently on the board.</li>
+                <li>Validated the pipeline with multiple drawings (spaceship, circle, gear).</li>
               </ul>
               <div class="hr"></div>
-              <div class="k">Stack</div>
+              <div class="k">Used</div>
               <p class="sub" style="margin:0">RoboDK • UR10e • SVG-based path planning</p>
             </div>
           </div>
 
-          <!-- two gifs underneath, consistent rectangle tiles -->
           <div class="tileRow">
             <div class="tile"><img src="circle_port.gif" alt="DrawBot — circle"></div>
             <div class="tile"><img src="gear_port.gif" alt="DrawBot — gear"></div>
@@ -282,13 +283,13 @@
             <div>
               <div class="k">Key points</div>
               <ul>
-                <li>Taught the trajectory once, then executed consistent erasing runs.</li>
-                <li>Integrated the control workflow using a Franka interface with ROS 2.</li>
-                <li>Used a repeatable, testable motion routine for reliable cleaning.</li>
+                <li>Recorded a wipe path once, then replayed it consistently to erase a defined area.</li>
+                <li>Integrated robot control with a Franka interface using ROS 2.</li>
+                <li>Built the workflow in Python and C++ for repeatable execution.</li>
               </ul>
               <div class="hr"></div>
-              <div class="k">Stack</div>
-              <p class="sub" style="margin:0">Franka • ROS 2 • taught trajectory + replay</p>
+              <div class="k">Used</div>
+              <p class="sub" style="margin:0">Franka Panda • ROS 2 • Python • C++ • taught trajectory + replay</p>
             </div>
           </div>
         </div>
@@ -340,10 +341,10 @@
       <div class="grid">
         <div class="card span12">
           <div class="k">Programming</div>
-          <p class="sub" style="margin:0">Python, C / C#, Java, Arduino</p>
+          <p class="sub" style="margin:0">Python, C / C#, C++, Java</p>
           <div class="hr"></div>
           <div class="k">Tools</div>
-          <p class="sub" style="margin:0">MATLAB/Simulink, LTspice, KiCad, Git</p>
+          <p class="sub" style="margin:0">MATLAB/Simulink, LTspice, KiCad, Git, RoboDK, ROS 2</p>
           <div class="hr"></div>
           <div class="k">Focus</div>
           <p class="sub" style="margin:0">Robotics, Control Systems, Automation, Embedded &amp; Electronics</p>

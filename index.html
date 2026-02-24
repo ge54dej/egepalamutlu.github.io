@@ -106,7 +106,7 @@
       line-height:1.25;
     }
     .meta{color:var(--muted); font-size: 13px; margin-bottom: 10px}
-    .hr{height:1px;background:var(--border);margin:8px 0} /* tighter */
+    .hr{height:1px;background:var(--border);margin:8px 0}
     ul{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.6}
     li{margin:6px 0}
 
@@ -128,15 +128,14 @@
     }
     @media (max-width: 900px){ .twoCol{grid-template-columns: 1fr;} }
 
-    /* PULL THE GIF ROW UP (removes the blank gap under Tools) */
+    /* Bottom GIF row: pull it UP hard to remove the blank area under Tools (matches your screenshot) */
     .tileRow{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:14px;
-      margin-top:-10px;
+      margin-top:-26px;     /* stronger pull up */
     }
     @media (max-width: 900px){ .tileRow{grid-template-columns: 1fr;} }
-
     .tile{
       aspect-ratio: 16 / 9;
       border-radius: 14px;
@@ -151,7 +150,6 @@
       display:block;
     }
 
-    /* pill tags */
     .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
     .tag{
       font-size: 12px;
@@ -163,7 +161,6 @@
       white-space: nowrap;
     }
 
-    /* simple skills grid */
     .skillsGrid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -277,7 +274,6 @@
   <section class="section" id="projects">
     <div class="container">
       <h2>Projects</h2>
-      <p class="lead">Two robotics demos on a whiteboard: drawing from SVG and erasing a defined area.</p>
 
       <div class="grid">
         <!-- Project 1 -->

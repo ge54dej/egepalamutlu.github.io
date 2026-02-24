@@ -121,8 +121,8 @@
       line-height:1.25;
     }
     .meta{color:var(--muted); font-size: 13px; margin-bottom: 10px}
-    .hr{height:1px;background:var(--border);margin:10px 0} /* tighter than before */
-    ul{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.6} /* tighter */
+    .hr{height:1px;background:var(--border);margin:10px 0}
+    ul{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.6}
     li{margin:6px 0}
 
     .media{
@@ -143,7 +143,7 @@
     }
     @media (max-width: 900px){ .twoCol{grid-template-columns: 1fr;} }
 
-    .tileRow{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:10px;} /* tighter */
+    .tileRow{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:10px;}
     @media (max-width: 900px){ .tileRow{grid-template-columns: 1fr;} }
     .tile{
       aspect-ratio: 16 / 9;
@@ -159,8 +159,7 @@
       display:block;
     }
 
-    /* pill tags */
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px} /* tighter */
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
     .tag{
       font-size: 12px;
       color: var(--muted);
@@ -171,7 +170,6 @@
       white-space: nowrap;
     }
 
-    /* simple skills grid */
     .skillsGrid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -186,6 +184,12 @@
       box-shadow: none;
     }
     @media (max-width: 900px){ .skillsBox{grid-column: span 12;} }
+
+    /* Bigger tags only in Skills */
+    .skillsBox .tag{
+      font-size: 14px;
+      padding: 6px 12px;
+    }
 
     .footer{
       padding: 28px 0 60px;
@@ -217,15 +221,10 @@
       <h1>Ege Palamutlu’s Portfolio</h1>
       <p class="sub">
         I’m studying Electrical Engineering at the Technical University of Munich, focusing on Automation & Robotics.
-        I build practical robotics systems and validate them with real demos.
       </p>
 
       <div class="row">
-        <a class="btn primary" href="#thesis">Bachelor Thesis</a>
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="https://github.com/egepalamutlu" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="mailto:egepalamutlu01@gmail.com">egepalamutlu01@gmail.com</a>
-        <a class="btn" href="https://www.linkedin.com/in/ege-palamutlu-10bbbb219/" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- Removed the first-picture buttons (Bachelor Thesis / Projects / GitHub / Email / LinkedIn) -->
       </div>
     </div>
   </header>
@@ -252,7 +251,6 @@
             Automated experiment cycle: robot loads a plate, the device measures, and the robot unloads it.
           </div>
 
-          <!-- tools moved under left text (like projects) -->
           <div class="k" style="margin-top:10px">Tools</div>
           <div class="tags">
             <span class="tag">Franka Panda</span>
@@ -265,14 +263,14 @@
         <div class="card span5">
           <div class="k">Motivation</div>
           <p class="sub" style="margin:0">
-            Lab workflows often require manual handling and device-by-device integrations. This slows experiments and increases errors.
+            Lab workflows often require manual handling and one-off device integrations. This slows experiments and increases errors.
           </p>
 
           <div class="hr"></div>
 
           <div class="k">Approach</div>
           <p class="sub" style="margin:0">
-            Used <b>SiLA 2</b> as a common interface so robots and lab devices can work together in one coordinated workflow.
+            Used <b>SiLA 2</b> as a common interface so robots and lab devices can be orchestrated in one workflow.
           </p>
 
           <div class="hr"></div>
@@ -316,6 +314,7 @@
                 <span class="tag">RoboDK</span>
                 <span class="tag">UR10e</span>
                 <span class="tag">SVG</span>
+                <span class="tag">Python</span>
               </div>
             </div>
           </div>

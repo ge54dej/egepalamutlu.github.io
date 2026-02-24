@@ -28,6 +28,7 @@
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{width:min(1120px,92vw);margin:0 auto}
+
     .nav{
       position:sticky; top:0; z-index:20;
       background: rgba(7,10,16,.70);
@@ -48,6 +49,7 @@
     .navlinks{display:flex; flex-wrap:wrap; gap:14px; color:var(--muted)}
     .navlinks a{color:var(--muted)}
     .navlinks a:hover{color:var(--text); text-decoration:none}
+
     .hero{padding:56px 0 22px}
     .badge{
       display:inline-flex; align-items:center; gap:8px;
@@ -85,9 +87,11 @@
       border-color: rgba(125,211,252,.22);
     }
     .btn:hover{transform: translateY(-1px); text-decoration:none; border-color: rgba(255,255,255,.18)}
+
     .section{padding: 28px 0}
     .section h2{margin:0 0 10px; font-size: 22px}
     .lead{color:var(--muted); margin:0 0 14px; line-height:1.6; max-width: 90ch}
+
     .grid{display:grid; grid-template-columns: repeat(12,1fr); gap:14px}
     .card{
       grid-column: span 6;
@@ -103,6 +107,7 @@
     @media (max-width: 900px){
       .card, .span7, .span5, .span12{grid-column: span 12}
     }
+
     .k{
       color:var(--muted);
       font-size:12px;
@@ -153,6 +158,34 @@
       display:block;
     }
 
+    /* pill tags */
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .tag{
+      font-size: 12px;
+      color: var(--muted);
+      border:1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.02);
+      white-space: nowrap;
+    }
+
+    /* simple skills grid */
+    .skillsGrid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .skillsBox{
+      grid-column: span 4;
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: none;
+    }
+    @media (max-width: 900px){ .skillsBox{grid-column: span 12;} }
+
     .footer{
       padding: 28px 0 60px;
       color: var(--muted);
@@ -202,7 +235,7 @@
       <h2>Bachelor Thesis</h2>
       <p class="lead">
         <b>Towards Automated Chemistry Research: Making Laboratory Devices Intelligent and Automation-Compatible</b>
-        — a proof-of-concept lab automation workflow combining robot handling with automated plate-reader measurements.
+        — a lab automation proof-of-concept that connects a robot with a plate reader to run a full measurement cycle with minimal manual steps.
       </p>
 
       <div class="grid">
@@ -214,20 +247,30 @@
               Your browser does not support the video tag.
             </video>
           </div>
-          <div class="meta" style="margin-top:10px">Load → measure → unload workflow demonstration.</div>
+          <div class="meta" style="margin-top:10px">
+            Robot loads a plate, the device runs the measurement, and the robot unloads it — shown end-to-end.
+          </div>
+          <div class="tags">
+            <span class="tag">Franka Panda</span>
+            <span class="tag">SiLA 2</span>
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+          </div>
         </div>
 
         <div class="card span5">
           <div class="k">Highlights</div>
           <ul>
-            <li>Built an end-to-end automation flow with clear sequencing and synchronization.</li>
-            <li>Focused on reliability: safe execution and repeatable behavior.</li>
-            <li>Demonstrated a complete cycle that reduces manual handling during experiments.</li>
+            <li>Designed a complete workflow (robot handling + device run) that works as one process.</li>
+            <li>Emphasized repeatability and safe sequencing to avoid failures during execution.</li>
+            <li>Delivered a working demo that can be extended to other lab devices/workflows.</li>
           </ul>
+
           <div class="hr"></div>
-          <div class="k">What this shows</div>
+
+          <div class="k">Outcome</div>
           <p class="sub" style="margin:0">
-            System integration mindset: turning separate components (robot + device) into one dependable workflow.
+            A reliable automation cycle that demonstrates how robotics can reduce manual steps in lab experiments.
           </p>
         </div>
       </div>
@@ -246,7 +289,7 @@
           <div class="k">Project 1</div>
           <div class="title">DrawBot — Drawing shapes from SVG on a whiteboard</div>
           <p class="sub">
-            Built a drawing pipeline in RoboDK to render SVG shapes on a flat whiteboard surface with a UR10e.
+            Built a drawing pipeline in RoboDK to render SVG shapes on a whiteboard with a UR10e.
           </p>
 
           <div class="twoCol" style="margin-top:12px">
@@ -254,13 +297,17 @@
             <div>
               <div class="k">Key points</div>
               <ul>
-                <li>Converted SVG paths into smooth robot motion segments (pen up/down + drawing strokes).</li>
+                <li>Converted SVG paths into drawing trajectories (strokes + pen up/down moves).</li>
                 <li>Scaled and positioned shapes consistently on the board.</li>
-                <li>Validated the pipeline with multiple drawings (spaceship, circle, gear).</li>
+                <li>Validated on multiple drawings (spaceship, circle, gear).</li>
               </ul>
               <div class="hr"></div>
-              <div class="k">Used</div>
-              <p class="sub" style="margin:0">RoboDK • UR10e • SVG-based path planning</p>
+              <div class="k">Tools</div>
+              <div class="tags">
+                <span class="tag">RoboDK</span>
+                <span class="tag">UR10e</span>
+                <span class="tag">SVG</span>
+              </div>
             </div>
           </div>
 
@@ -285,11 +332,16 @@
               <ul>
                 <li>Recorded a wipe path once, then replayed it consistently to erase a defined area.</li>
                 <li>Integrated robot control with a Franka interface using ROS 2.</li>
-                <li>Built the workflow in Python and C++ for repeatable execution.</li>
+                <li>Implemented the workflow using Python and C++.</li>
               </ul>
               <div class="hr"></div>
-              <div class="k">Used</div>
-              <p class="sub" style="margin:0">Franka Panda • ROS 2 • Python • C++ • taught trajectory + replay</p>
+              <div class="k">Tools</div>
+              <div class="tags">
+                <span class="tag">Franka Panda</span>
+                <span class="tag">ROS 2</span>
+                <span class="tag">Python</span>
+                <span class="tag">C++</span>
+              </div>
             </div>
           </div>
         </div>
@@ -308,6 +360,11 @@
           <div class="k">Working Student</div>
           <div class="title">Linde Engineering — Engineering Department</div>
           <p class="sub">21.03.2022 – 30.07.2022</p>
+          <div class="hr"></div>
+          <div class="k">Tools</div>
+          <div class="tags">
+            <span class="tag">Documentation</span>
+          </div>
         </div>
 
         <div class="card span12">
@@ -317,18 +374,37 @@
             Graph-based mechatronics system representation and optimization for the Hand Optimization Pipeline in MATLAB.
           </p>
           <p class="sub" style="margin-top:6px">12.2022 – 03.2023</p>
+          <div class="hr"></div>
+          <div class="k">Tools</div>
+          <div class="tags">
+            <span class="tag">MATLAB</span>
+            <span class="tag">Optimization</span>
+          </div>
         </div>
 
         <div class="card span12">
           <div class="k">Working Student</div>
           <div class="title">Knorr-Bremse — Electronic Systems for Motor Control</div>
           <p class="sub">Hardware design, PCB layout, and system integration with simulation tooling.</p>
+          <div class="hr"></div>
+          <div class="k">Tools</div>
+          <div class="tags">
+            <span class="tag">KiCad</span>
+            <span class="tag">PCB</span>
+            <span class="tag">MATLAB/Simulink</span>
+          </div>
         </div>
 
         <div class="card span12">
           <div class="k">Working Student (Current)</div>
           <div class="title">PULS GmbH — Application Engineering</div>
           <p class="sub">Application engineering with hands-on testing and validation of power supplies.</p>
+          <div class="hr"></div>
+          <div class="k">Tools</div>
+          <div class="tags">
+            <span class="tag">Power supply testing</span>
+            <span class="tag">Validation</span>
+          </div>
         </div>
       </div>
     </div>
@@ -338,16 +414,38 @@
   <section class="section" id="skills">
     <div class="container">
       <h2>Skills</h2>
-      <div class="grid">
-        <div class="card span12">
+
+      <div class="skillsGrid">
+        <div class="skillsBox">
           <div class="k">Programming</div>
-          <p class="sub" style="margin:0">Python, C / C#, C++, Java</p>
-          <div class="hr"></div>
-          <div class="k">Tools</div>
-          <p class="sub" style="margin:0">MATLAB/Simulink, LTspice, KiCad, Git, RoboDK, ROS 2</p>
-          <div class="hr"></div>
-          <div class="k">Focus</div>
-          <p class="sub" style="margin:0">Robotics, Control Systems, Automation, Embedded &amp; Electronics</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">C#</span>
+            <span class="tag">C++</span>
+            <span class="tag">Java</span>
+          </div>
+        </div>
+
+        <div class="skillsBox">
+          <div class="k">Robotics</div>
+          <div class="tags">
+            <span class="tag">ROS 2</span>
+            <span class="tag">Franka Panda</span>
+            <span class="tag">UR10e</span>
+            <span class="tag">RoboDK</span>
+          </div>
+        </div>
+
+        <div class="skillsBox">
+          <div class="k">Engineering Tools</div>
+          <div class="tags">
+            <span class="tag">MATLAB/Simulink</span>
+            <span class="tag">KiCad</span>
+            <span class="tag">LTspice</span>
+            <span class="tag">Git</span>
+            <span class="tag">SiLA 2</span>
+          </div>
         </div>
       </div>
     </div>
@@ -364,7 +462,7 @@
             <b>Munich, Germany</b><br/>
             Email: <a href="mailto:egepalamutlu01@gmail.com">egepalamutlu01@gmail.com</a><br/>
             LinkedIn: <a href="https://www.linkedin.com/in/ege-palamutlu-10bbbb219/" target="_blank" rel="noopener">
-              ege-palamutlu-10bbbb219
+              linkedin.com/in/ege-palamutlu-10bbbb219
             </a>
           </p>
         </div>

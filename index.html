@@ -99,9 +99,8 @@
     .span7{grid-column: span 7}
     .span5{grid-column: span 5}
     .span12{grid-column: span 12}
-    .span6{grid-column: span 6}
     @media (max-width: 900px){
-      .card, .span7, .span5, .span12, .span6{grid-column: span 12}
+      .card, .span7, .span5, .span12{grid-column: span 12}
     }
     .k{
       color:var(--muted);
@@ -200,7 +199,7 @@
       <h2>Bachelor Thesis</h2>
       <p class="lead">
         <b>Towards Automated Chemistry Research: Making Laboratory Devices Intelligent and Automation-Compatible</b>
-        — a proof-of-concept lab automation workflow integrating a robot with a plate reader via a standardized interface.
+        — a lab automation proof-of-concept connecting a robot with a microplate reader to run measurements with minimal manual steps.
       </p>
 
       <div class="grid">
@@ -213,147 +212,107 @@
             </video>
           </div>
           <div class="meta" style="margin-top:10px">
-            Robot-assisted load → measure → unload workflow (plate reader automation + safe sequencing).
+            Load → measure → unload workflow demonstration.
           </div>
 
           <div class="tags">
-            <span class="tag">Franka Panda</span>
-            <span class="tag">SiLA 2</span>
-            <span class="tag">Lab Automation</span>
-            <span class="tag">Device Integration</span>
+            <span class="tag">Lab automation</span>
+            <span class="tag">Robot integration</span>
+            <span class="tag">Workflow design</span>
           </div>
         </div>
 
         <div class="card span5">
-          <div class="k">Key points</div>
+          <div class="k">Highlights</div>
 
-          <div class="title">Problem</div>
-          <p class="sub" style="margin:0 0 10px">
-            Laboratory devices often use different interfaces, making automation pipelines hard to integrate, maintain, and scale.
-          </p>
-
-          <div class="title">Solution</div>
-          <p class="sub" style="margin:0 0 10px">
-            Built a standardized robot–device integration where the robot and instrument can be orchestrated through a common automation layer.
-          </p>
-
-          <div class="title">How</div>
           <ul>
-            <li>Designed an automation flow with clear device/robot responsibilities and safety constraints.</li>
-            <li>Implemented a robot control interface with core commands (pose moves + gripper actions).</li>
-            <li>Added synchronization around device tray timing to prevent collisions and improve reliability.</li>
+            <li><b>Goal:</b> make lab devices easier to integrate into automated workflows.</li>
+            <li><b>Built:</b> a working end-to-end pipeline where robot and instrument run in a coordinated sequence.</li>
+            <li><b>Focus:</b> reliability (clear steps, synchronization, and safe execution).</li>
+            <li><b>Outcome:</b> successful demo run showing the complete automation cycle.</li>
+            <li><b>Value:</b> reduced manual handling and a structure that can be extended to other devices.</li>
           </ul>
 
           <div class="hr"></div>
 
-          <div class="title">Proof</div>
-          <p class="sub" style="margin:0 0 10px">
-            End-to-end demo run succeeded smoothly (robot manipulation + device run + safe sequencing).
-          </p>
-
-          <div class="title">Lessons learned</div>
+          <div class="k">What I learned</div>
           <p class="sub" style="margin:0">
-            In lab robotics, reliability comes from interface clarity, timing, and safety checks—not only motion planning.
+            In automation projects, clean sequencing and verification matter as much as motion control — small timing details decide if the system is reliable.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PROJECTS (MERGED) ===================== -->
+  <!-- ===================== PROJECTS ===================== -->
   <section class="section" id="projects">
     <div class="container">
       <h2>Projects</h2>
       <p class="lead">
-        Featured project: a complete robotics programming pipeline shown with quick visual proof (GIFs now).
-        Additional videos for the second part will be added later.
+        Two robotics projects on a whiteboard: drawing from SVG and erasing a defined area.
       </p>
 
       <div class="grid">
-        <!-- One complete project -->
+        <!-- Project 1 -->
         <div class="card span12">
-          <div class="k">Featured project</div>
-          <div class="title">Perception-to-Action Robotics Pipeline</div>
-          <div class="meta">
-            End-to-end workflow: perceive the scene → estimate target state → execute a sequence → verify success.
+          <div class="k">Project 1</div>
+          <div class="title">DrawBot — Drawing shapes from SVG on a whiteboard</div>
+          <p class="sub">
+            Programmed a UR10e in RoboDK to draw user-provided shapes on a flat surface (not hard-coded).
+          </p>
+
+          <div class="twoCol" style="margin-top:12px">
+            <div class="media"><img src="spaceship_port.gif" alt="SVG drawing — spaceship"></div>
+            <div class="media"><img src="circle_port.gif" alt="SVG drawing — circle"></div>
           </div>
 
-          <div class="twoCol">
-            <div class="media"><img src="circle_port.gif" alt="Perception-to-action demo (clip 1)"></div>
-            <div class="media"><img src="gear_port.gif" alt="Perception-to-action demo (clip 2)"></div>
+          <div class="twoCol" style="margin-top:14px">
+            <div class="media"><img src="gear_port.gif" alt="SVG drawing — gear"></div>
+            <div class="media"><img src="juice.jpg" alt="SVG drawing — juice"></div>
           </div>
 
-          <div style="margin-top:14px" class="twoCol">
-            <div class="media" style="max-width:720px;"><img src="spaceship_port.gif" alt="Perception-to-action demo (clip 3)"></div>
+          <div class="tags">
+            <span class="tag">RoboDK</span>
+            <span class="tag">UR10e</span>
+            <span class="tag">SVG-based paths</span>
+            <span class="tag">User-defined surface</span>
+          </div>
+
+          <ul>
+            <li>Converted SVG drawings into robot trajectories on the board.</li>
+            <li>Drawing surface was configurable (not hard-coded to one pose).</li>
+            <li>Tested multiple drawings (spaceship, circle, gear, and more).</li>
+          </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card span12">
+          <div class="k">Project 2</div>
+          <div class="title">PolishBot — Erasing a drawing from the surface</div>
+          <p class="sub">
+            Built an erase routine by first teaching a trajectory, then replaying it to clean a defined area reliably.
+          </p>
+
+          <div class="twoCol" style="margin-top:12px">
+            <div class="media"><img src="erase_port.gif" alt="Erase demo"></div>
             <div>
-              <div class="k">Proof</div>
-              <p class="sub" style="margin:0">
-                The clips show the pipeline running end-to-end with repeatable behavior across different scenarios/iterations.
-              </p>
-
-              <div class="hr"></div>
-
-              <div class="k">Video</div>
-              <div class="media" style="border-style:dashed; display:flex; align-items:center; justify-content:center; min-height:180px;">
-                <div style="color:var(--muted); padding:20px;">Second demo video coming soon</div>
-              </div>
-
-              <div class="tags" style="margin-top:10px">
-                <span class="tag">Sequencing</span>
-                <span class="tag">Robustness</span>
-                <span class="tag">Verification</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hr"></div>
-
-          <div class="grid">
-            <div class="card flat span6">
-              <div class="k">Problem</div>
-              <p class="sub" style="margin:0">
-                Build a reliable robotics system that goes from perception to executed actions.
-                The challenge is noisy observations, timing, and defining measurable success.
-              </p>
-            </div>
-
-            <div class="card flat span6">
-              <div class="k">Solution</div>
-              <p class="sub" style="margin:0">
-                Implemented a modular perception → decision → action → validation pipeline with clear interfaces,
-                designed for repeatability and fast debugging.
-              </p>
-            </div>
-
-            <div class="card flat span6">
-              <div class="k">How</div>
+              <div class="k">Punch points</div>
               <ul>
-                <li><b>Perception / state estimation:</b> extracted required scene information and converted it into a usable target state.</li>
-                <li><b>Action sequencing:</b> step-by-step routine with preconditions and success checks.</li>
-                <li><b>Robustness:</b> consistent coordinate handling, deterministic parameters, and retry/fallback logic.</li>
-                <li><b>Validation:</b> used short clips/GIFs as fast proof and debugging feedback loops.</li>
+                <li>Taught the wipe trajectory once, executed it consistently afterwards.</li>
+                <li>Area to erase was defined by the user (not fixed in code).</li>
+                <li>Implemented using a Franka interface with <b>ROS 2</b>.</li>
               </ul>
+
               <div class="tags">
-                <span class="tag">Pipeline design</span>
-                <span class="tag">Debuggable structure</span>
-                <span class="tag">Iterative development</span>
+                <span class="tag">Franka</span>
+                <span class="tag">ROS 2</span>
+                <span class="tag">Trajectory replay</span>
+                <span class="tag">Surface cleaning</span>
               </div>
-            </div>
-
-            <div class="card flat span6">
-              <div class="k">Proof + Status</div>
-              <ul>
-                <li>GIF demos show stable behavior across iterations of the pipeline.</li>
-                <li>Second-part videos will be added later (longer sequence + more checks).</li>
-                <li><b>Status:</b> the third extension of the project was not completed.</li>
-              </ul>
 
               <div class="hr"></div>
-
-              <div class="k">Lessons learned</div>
               <p class="sub" style="margin:0">
-                Reliability comes from verification and clean interfaces: if success isn’t measurable, robustness is impossible.
-                In practice, timing, retries, and coordinate conventions dominate performance.
+                More videos for the extended erase demo will be added later.
               </p>
             </div>
           </div>

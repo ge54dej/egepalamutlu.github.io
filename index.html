@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Ege Palamutlu — Robotics Portfolio</title>
-  <meta name="description" content="Robotics portfolio of Ege Palamutlu. Bachelor thesis, projects, experience, and contact."/>
+  <meta name="description" content="Robotics portfolio of Ege Palamutlu. Bachelor thesis, projects, experience, skills, and contact."/>
   <style>
     :root{
       --bg:#070A10;
@@ -91,7 +91,6 @@
       padding: 16px;
       box-shadow: var(--shadow);
     }
-    .card.flat{box-shadow:none; background: rgba(255,255,255,.02)}
     .span7{grid-column: span 7}
     .span5{grid-column: span 5}
     .span12{grid-column: span 12}
@@ -115,7 +114,6 @@
     ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.6}
     li{margin:6px 0}
 
-    /* Media */
     .media{
       width:100%;
       border-radius: 14px;
@@ -124,14 +122,18 @@
       overflow: hidden;
     }
     video{display:block; width:100%; height:auto}
+    img{display:block; width:100%; height:auto}
 
-    /* Unified gallery tiles (prevents huge images like juice.jpg) */
-    .gallery{
+    .twoCol{
       display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
-    @media (max-width: 900px){ .gallery{grid-template-columns: 1fr;} }
+    @media (max-width: 900px){ .twoCol{grid-template-columns: 1fr;} }
+
+    /* Uniform tiles for GIFs (rectangles) */
+    .tileRow{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;}
+    @media (max-width: 900px){ .tileRow{grid-template-columns: 1fr;} }
     .tile{
       aspect-ratio: 16 / 9;
       border-radius: 14px;
@@ -142,16 +144,9 @@
     .tile img{
       width:100%;
       height:100%;
-      object-fit: cover;   /* key: makes juice.jpg same size */
+      object-fit: cover;
       display:block;
     }
-
-    .twoCol{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    @media (max-width: 900px){ .twoCol{grid-template-columns: 1fr;} }
 
     .footer{
       padding: 28px 0 60px;
@@ -171,6 +166,7 @@
         <a href="#thesis">Thesis</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -182,7 +178,7 @@
       <h1>Robotics Portfolio</h1>
       <p class="sub">
         I’m studying Electrical Engineering at the Technical University of Munich, focusing on Automation & Robotics.
-        I enjoy building practical robotics systems and validating them with real demos.
+        I build practical robotics systems and validate them with real demos.
       </p>
 
       <div class="row">
@@ -190,7 +186,7 @@
         <a class="btn" href="#projects">Projects</a>
         <a class="btn" href="https://github.com/egepalamutlu" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="mailto:egepalamutlu01@gmail.com">egepalamutlu01@gmail.com</a>
-        <a class="btn" href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://www.linkedin.com/in/ege-palamutlu-10bbbb219/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </header>
@@ -219,8 +215,8 @@
         <div class="card span5">
           <div class="k">Highlights</div>
           <ul>
-            <li>Built a working end-to-end automation flow with clear steps and synchronization.</li>
-            <li>Focused on reliability: safe sequencing, consistent execution, and error-aware workflow structure.</li>
+            <li>Built an end-to-end automation flow with clear sequencing and synchronization.</li>
+            <li>Focused on reliability: safe execution and repeatable behavior.</li>
             <li>Demonstrated a complete cycle that reduces manual handling during experiments.</li>
           </ul>
 
@@ -247,19 +243,12 @@
           <div class="k">Project 1</div>
           <div class="title">DrawBot — Drawing shapes from SVG on a whiteboard</div>
           <p class="sub">
-            Used RoboDK with a UR10e to draw shapes generated from SVG paths (circle, gear, spaceship, and more).
+            Used RoboDK with a UR10e to draw shapes generated from SVG paths (circle, gear, spaceship).
           </p>
 
+          <!-- same structure as Project 2: left media, right text -->
           <div class="twoCol" style="margin-top:12px">
-            <div>
-              <div class="gallery">
-                <div class="tile"><img src="circle_port.gif" alt="DrawBot — circle"></div>
-                <div class="tile"><img src="gear_port.gif" alt="DrawBot — gear"></div>
-                <div class="tile"><img src="spaceship_port.gif" alt="DrawBot — spaceship"></div>
-                <div class="tile"><img src="juice.jpg" alt="DrawBot — juice"></div>
-              </div>
-            </div>
-
+            <div class="media"><img src="spaceship_port.gif" alt="DrawBot — spaceship"></div>
             <div>
               <div class="k">Key points</div>
               <ul>
@@ -272,6 +261,12 @@
               <p class="sub" style="margin:0">RoboDK • UR10e • SVG-based path planning</p>
             </div>
           </div>
+
+          <!-- two gifs underneath, consistent rectangle tiles -->
+          <div class="tileRow">
+            <div class="tile"><img src="circle_port.gif" alt="DrawBot — circle"></div>
+            <div class="tile"><img src="gear_port.gif" alt="DrawBot — gear"></div>
+          </div>
         </div>
 
         <!-- Project 2 -->
@@ -279,7 +274,7 @@
           <div class="k">Project 2</div>
           <div class="title">PolishBot — Erasing a drawing from the surface</div>
           <p class="sub">
-            Implemented an erase routine by teaching a wipe trajectory and replaying it reliably to clean a defined area.
+            Implemented an erase routine by teaching a wipe trajectory and replaying it reliably.
           </p>
 
           <div class="twoCol" style="margin-top:12px">
@@ -289,7 +284,7 @@
               <ul>
                 <li>Taught the trajectory once, then executed consistent erasing runs.</li>
                 <li>Integrated the control workflow using a Franka interface with ROS 2.</li>
-                <li>Kept the system robust by using a repeatable, testable motion routine.</li>
+                <li>Used a repeatable, testable motion routine for reliable cleaning.</li>
               </ul>
               <div class="hr"></div>
               <div class="k">Stack</div>
@@ -310,14 +305,6 @@
       <div class="grid">
         <div class="card span12">
           <div class="k">Working Student</div>
-          <div class="title">PULS GmbH — Application Engineering</div>
-          <p class="sub">
-            Application engineering work with hands-on testing and validation of power supplies.
-          </p>
-        </div>
-
-        <div class="card span12">
-          <div class="k">Working Student</div>
           <div class="title">Linde Engineering — Engineering Department</div>
           <p class="sub">21.03.2022 – 30.07.2022</p>
         </div>
@@ -326,9 +313,40 @@
           <div class="k">Engineering Internship</div>
           <div class="title">TU Munich — Robotics &amp; System Intelligence Chair</div>
           <p class="sub">
-            Graph-based mechatronics system representation and optimization for a hand optimization pipeline in MATLAB.
+            Graph-based mechatronics system representation and optimization for the Hand Optimization Pipeline in MATLAB.
           </p>
           <p class="sub" style="margin-top:6px">12.2022 – 03.2023</p>
+        </div>
+
+        <div class="card span12">
+          <div class="k">Working Student</div>
+          <div class="title">Knorr-Bremse — Electronic Systems for Motor Control</div>
+          <p class="sub">Hardware design, PCB layout, and system integration with simulation tooling.</p>
+        </div>
+
+        <div class="card span12">
+          <div class="k">Working Student (Current)</div>
+          <div class="title">PULS GmbH — Application Engineering</div>
+          <p class="sub">Application engineering with hands-on testing and validation of power supplies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card span12">
+          <div class="k">Programming</div>
+          <p class="sub" style="margin:0">Python, C / C#, Java, Arduino</p>
+          <div class="hr"></div>
+          <div class="k">Tools</div>
+          <p class="sub" style="margin:0">MATLAB/Simulink, LTspice, KiCad, Git</p>
+          <div class="hr"></div>
+          <div class="k">Focus</div>
+          <p class="sub" style="margin:0">Robotics, Control Systems, Automation, Embedded &amp; Electronics</p>
         </div>
       </div>
     </div>
@@ -344,7 +362,9 @@
           <p class="sub" style="margin:0 0 10px">
             <b>Munich, Germany</b><br/>
             Email: <a href="mailto:egepalamutlu01@gmail.com">egepalamutlu01@gmail.com</a><br/>
-            LinkedIn: <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">YOUR_LINKEDIN_URL</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/ege-palamutlu-10bbbb219/" target="_blank" rel="noopener">
+              ege-palamutlu-10bbbb219
+            </a>
           </p>
         </div>
       </div>
